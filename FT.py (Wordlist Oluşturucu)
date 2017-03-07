@@ -1,0 +1,99 @@
+#Coder:qwertyy
+#Turkey
+
+#-*-coding:utf8;-*-
+#qpy:3
+#qpy:console
+
+import itertools as i
+import time
+
+print('''========================================================================
+      *                             Turkey                                 *
+      *                      ####################                          *                    
+      *                               FT                                   *
+      *                                                                    *
+      *                         Şifre Oluşturma                            *
+      *                            Programı                                *
+      *                                                                    *   
+      *                                                                    *  
+      *                      #####################                         *                     
+      *                                                                    *
+      *                                                                    *
+      *                                                                    *
+      *********************************************************************''')
+
+print("-----------------------Şifre Oluşturma Programı-----------------------")
+time.sleep(1)
+seçim=input("Eğer şifrenin bir kısmını biliyorsanız 1 e; tamamını bilmiyorsanız 2 ye basın: ")
+if seçim=="2":
+    print('''Şimdi size hazırlamak istediğiniz şifre listesiyle ilgili birkaç soru soracağız.
+    Lütfen birkaç saniye bekleyiniz...''')
+    time.sleep(1)
+    a=input("İstediğiniz şifre minimum kaç karakterden oluşsun: ")
+    ı=input("İstediğiniz şifre maksimum kaç karakterden oluşsun: ")
+    b=input("Peki bu şifrede kullanmamı istediğin karakterler neler: ")
+    s=input("Dosya hangi isimle kaydedilsin: ")
+    print("Bu biraz zaman alacak gibi duruyor..")
+    x=open(s,"w")
+    for g in range(int(a),int(ı)+1):
+        for t in i.product(b,repeat=g):
+            w=''.join(t)
+            print(w)
+            x.write(w+"\n")
+    x.close()
+elif seçim=="1":
+    şifre=input("Şifreyi giriniz(Bilinmeyen karakterlerin yerine * koyunuz: ")
+    rep=şifre.count("*")
+    karakter=input("Kullanmak istediğiniz karakterleri giriniz: ")
+    isim=input("Dosya hangi isimle kaydedilsin: ")
+    sonuç=list(i.product(karakter,repeat=rep))
+    x=open(isim,"w")
+    for e in sonuç:
+        düzenli=''.join(e)
+        sonhal=şifre.replace(rep*"*",düzenli)
+        x.write(sonhal)
+        print(sonhal)
+x.close()
+
+
+
+    
+    
+
+
+        
+        
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
